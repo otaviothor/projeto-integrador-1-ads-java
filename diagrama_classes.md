@@ -35,22 +35,13 @@
 - consultarEndereco(id: integer)
 - consultarEndereco(id: integer)
 
-## classe treino
+## Treino
 
 - nome: string
 - descricao: string
 
-## classe exercicio
+## Exercicio
 
 - nome: string
 - vídeo: string
 - descricao: string
-
-## tabela treino_exercicio
-
-- id_usuario
-- id_treino
-- id_exercicio
-- qtd_repeticao
-- qtd_series
-- tempo_descanso
