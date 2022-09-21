@@ -5,9 +5,7 @@ Técnicas de Desenvolvimento de Algoritmos e Programação Orientada a Objetos e
 construção de um sistema em Java que permita cadastro de itens, edições, consultas.
 
 O grupo deverá desenvolver algoritmos e um programa em Java, com classes específicas
-para resolver questões pertinentes ao seguinte sistema:
-
-**Sistema de controle de treinos para academia.**
+para resolver questões pertinentes ao seguinte sistema: **Sistema de controle de treinos para academia.**
 
 As classes criadas para resolução do problema deverão ter os atributos específicos ao elemento
 denotado, e deverá conter todos os métodos get e set e construtores. Além de contemplar os
