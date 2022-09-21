@@ -7,7 +7,7 @@ construção de um sistema em Java que permita cadastro de itens, edições, con
 O grupo deverá desenvolver algoritmos e um programa em Java, com classes específicas
 para resolver questões pertinentes ao seguinte sistema:
 
-## **Sistema de controle de treinos para academia.**
+**Sistema de controle de treinos para academia.**
 
 As classes criadas para resolução do problema deverão ter os atributos específicos ao elemento
 denotado, e deverá conter todos os métodos get e set e construtores. Além de contemplar os
@@ -15,7 +15,7 @@ conceitos de Herança, Classes Abstratas e Polimorfismo e a definição de no m�
 
 ## Requisitos do sistema de controle de treinos para academia
 
-### Programação Orientada a Objetos
+### Programação orientada a objetos
 
 O desenvolvimento deverá ser efetuado utilizando a
 linguagem de programação Java, com as seguintes características:
@@ -36,16 +36,16 @@ pseudocódigos criados para o projeto.
 O projeto interdisciplinar será dividido em três etapas, consistindo na definição de
 funcionalidades, desenvolvimento do software e apresentação final.
 
-### Primeira Fase – Definição dos grupos de trabalho
+### Primeira fase – definição dos grupos de trabalho
 
 Nesta fase os grupos deverão formar os grupos.
 
-### Segunda Fase – Elaboração das funcionalidades
+### Segunda fase – elaboração das funcionalidades
 
 Construir os diagramas UML das classes e construir um esboço do sistema. Os
 diagramas criados deverão ser apresentados no relatório final.
 
-### Terceira Fase – Entrega do projeto
+### Terceira fase – entrega do projeto
 
 Deverão ser entregues até o prazo limite de 06/11/2022:
 
@@ -81,12 +81,6 @@ neste documento, os alunos serão comunicados por meio da plataforma Blackboard.
 - Cirilo
 - Otávio
 - Rivaldo
-
-## To-Do
-
-- [] Terminar os diagramas de classes
-- [] Iniciar a codificação do projeto
-- [] Começar a escrever o relatório
 
 ## Projeto em Java
 
