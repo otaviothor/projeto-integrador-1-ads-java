@@ -9,6 +9,8 @@ public class Usuario {
   public String cpf;
   public String email;
   public String telefone;
+  public Endereco endereco;
+  public Treino treino;
 
   public Usuario(
       int id,
@@ -18,7 +20,9 @@ public class Usuario {
       float peso,
       String cpf,
       String email,
-      String telefone) {
+      String telefone,
+      Endereco endereco,
+      Treino treino) {
     this.id = id;
     this.nome = nome;
     this.dataNascimento = dataNascimento;
@@ -27,5 +31,7 @@ public class Usuario {
     this.cpf = cpf;
     this.email = email;
     this.telefone = telefone;
+    this.endereco = endereco;
+    this.treino = treino;
   }
 }
