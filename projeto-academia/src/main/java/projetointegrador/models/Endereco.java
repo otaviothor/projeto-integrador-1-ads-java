@@ -1,4 +1,4 @@
-package main.java.projetointegrador.models;
+package projetointegrador.models;
 
 public class Endereco {
   public int id;

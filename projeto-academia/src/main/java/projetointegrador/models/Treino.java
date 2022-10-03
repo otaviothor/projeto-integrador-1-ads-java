@@ -1,4 +1,4 @@
-package main.java.projetointegrador.models;
+package projetointegrador.models;
 
 import java.util.List;
 

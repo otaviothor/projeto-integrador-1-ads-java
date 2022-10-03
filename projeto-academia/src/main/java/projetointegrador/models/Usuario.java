@@ -1,4 +1,4 @@
-package main.java.projetointegrador.models;
+package projetointegrador.models;
 
 public class Usuario {
   public int id;
