@@ -1,13 +1,16 @@
 package projetointegrador.models;
 
 public class Exercicio {
-  public int id;
+  public String id;
   public String nome;
   public String video;
   public String descricao;
 
+  public Exercicio() {
+  }
+
   public Exercicio(
-      int id,
+      String id,
       String nome,
       String video,
       String descricao) {

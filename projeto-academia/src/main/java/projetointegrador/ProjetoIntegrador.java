@@ -1,13 +1,16 @@
 package projetointegrador;
 
-import projetointegrador.controllers.*;
-import projetointegrador.models.*;
+import javax.swing.JOptionPane;
+
+import projetointegrador.controllers.ExercicioController;
+import projetointegrador.controllers.TreinoController;
+import projetointegrador.controllers.UsuarioController;
 import projetointegrador.services.MenuService;
 
 public class ProjetoIntegrador {
 	public static void main(String[] args) {
+
 		MenuService menuService = new MenuService();
-		EnderecoController enderecoController = new EnderecoController();
 		ExercicioController exercicioController = new ExercicioController();
 		TreinoController treinoController = new TreinoController();
 		UsuarioController usuarioController = new UsuarioController();
@@ -15,23 +18,26 @@ public class ProjetoIntegrador {
 		int opcao;
 
 		do {
-			opcao = menuService.menuInicial();
+			// opcao = menuService.menuInicial();
+			opcao = 1;
 
 			if (opcao != 0) {
-				int modelo = menuService.menuModelo(opcao);
+				// int modelo = menuService.menuModelo(opcao);
+				int modelo = 1;
 
 				if (modelo == 1)
-					enderecoController.controlador(opcao);
-				else if (modelo == 2)
 					exercicioController.controlador(opcao);
-				else if (modelo == 3)
+				else if (modelo == 2)
 					treinoController.controlador(opcao);
-				else if (modelo == 4)
+				else if (modelo == 3)
 					usuarioController.controlador(opcao);
 			}
 
 		} while (opcao != 0);
 
-		System.out.println("Obrigado por usar nosso sistema.");
+		JOptionPane.showMessageDialog(null,
+				"Obrigado por usar nosso sistema.",
+				"Sistema de gerenciamento de academia",
+				JOptionPane.INFORMATION_MESSAGE);
 	}
 }
