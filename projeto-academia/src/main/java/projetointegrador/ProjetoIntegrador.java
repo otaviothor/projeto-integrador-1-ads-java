@@ -18,12 +18,10 @@ public class ProjetoIntegrador {
 		int opcao;
 
 		do {
-			// opcao = menuService.menuInicial();
-			opcao = 1;
+			opcao = menuService.menuInicial();
 
 			if (opcao != 0) {
-				// int modelo = menuService.menuModelo(opcao);
-				int modelo = 1;
+				int modelo = menuService.menuModelo(opcao);
 
 				if (modelo == 1)
 					exercicioController.controlador(opcao);
