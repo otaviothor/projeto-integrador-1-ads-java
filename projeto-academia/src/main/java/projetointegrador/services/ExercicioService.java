@@ -112,7 +112,7 @@ public class ExercicioService {
           "Editar exercício",
           JOptionPane.QUESTION_MESSAGE);
 
-      if (exercicioEditado.descricao.length() == 5) {
+      if (exercicioEditado.descricao.length() == 0) {
         exercicioEditado.descricao = exercicioCadastrado.descricao;
       } else if (exercicioEditado.descricao.length() < 5) {
         JOptionPane.showMessageDialog(null, "A nova descrição deve ter no minímo 5 caracteres.", "Erro",
