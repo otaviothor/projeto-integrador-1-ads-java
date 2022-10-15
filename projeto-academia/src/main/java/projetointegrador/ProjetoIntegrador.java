@@ -7,31 +7,33 @@ import projetointegrador.controllers.TreinoController;
 import projetointegrador.controllers.UsuarioController;
 import projetointegrador.services.MenuService;
 
+/**
+ * classe principal do sistema onde ele vai ser inicializado o o programa
+ */
 public class ProjetoIntegrador {
 	public static void main(String[] args) {
-
 		MenuService menuService = new MenuService();
 		ExercicioController exercicioController = new ExercicioController();
 		TreinoController treinoController = new TreinoController();
 		UsuarioController usuarioController = new UsuarioController();
 
-		int opcao;
+		int operacao;
 
 		do {
-			opcao = menuService.menuInicial();
+			operacao = menuService.menuInicial();
 
-			if (opcao != 0) {
-				int modelo = menuService.menuModelo(opcao);
+			if (operacao != 0) {
+				int modelo = menuService.menuModelo(operacao);
 
 				if (modelo == 1)
-					exercicioController.controlador(opcao);
+					exercicioController.controlador(operacao);
 				else if (modelo == 2)
-					treinoController.controlador(opcao);
+					treinoController.controlador(operacao);
 				else if (modelo == 3)
-					usuarioController.controlador(opcao);
+					usuarioController.controlador(operacao);
 			}
 
-		} while (opcao != 0);
+		} while (operacao != 0);
 
 		JOptionPane.showMessageDialog(null,
 				"Obrigado por usar nosso sistema.",
