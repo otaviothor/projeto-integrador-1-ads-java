@@ -1,19 +1,19 @@
 package projetointegrador.models;
 
 public class Treino {
-  public int id;
+  public String id;
   public String nome;
   public String descricao;
-  public int[] idExercicios;
+  public String[] idExercicios;
 
   public Treino() {
   }
 
   public Treino(
-      int id,
+      String id,
       String nome,
       String descricao,
-      int[] idExercicios) {
+      String[] idExercicios) {
     this.id = id;
     this.nome = nome;
     this.descricao = descricao;

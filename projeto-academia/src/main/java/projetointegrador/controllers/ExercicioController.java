@@ -5,12 +5,14 @@ import java.util.UUID;
 import javax.swing.JOptionPane;
 
 import projetointegrador.dto.ExercicioIndexDto;
+import projetointegrador.dto.ExerciciosQuantidadeDto;
 import projetointegrador.models.Exercicio;
 import projetointegrador.services.ExercicioService;
 
 public class ExercicioController {
   Exercicio exercicios[] = new Exercicio[30];
   ExercicioService exercicioService = new ExercicioService();
+  int qtdExerciciosCadastrados = 0;
 
   /**
    * metodo de controlador, ela vai receber como parametro
@@ -20,7 +22,6 @@ public class ExercicioController {
    * @param int operacao
    */
   public void controlador(int operacao) {
-    int qtdExerciciosCadastrados = 0;
     for (Exercicio exercicio : exercicios) {
       if (exercicio != null) {
         qtdExerciciosCadastrados++;
@@ -168,5 +169,14 @@ public class ExercicioController {
     ExercicioIndexDto exercicioIndexDto = new ExercicioIndexDto(exercicioSelecionado, indexSelecionado);
 
     return exercicioIndexDto;
+  }
+
+  public ExerciciosQuantidadeDto retornaExerciciosEQuantidadeCadstrado() {
+    ExerciciosQuantidadeDto exerciciosQtd = new ExerciciosQuantidadeDto();
+
+    exerciciosQtd.exercicios = exercicios;
+    exerciciosQtd.quantidade = qtdExerciciosCadastrados;
+
+    return exerciciosQtd;
   }
 }

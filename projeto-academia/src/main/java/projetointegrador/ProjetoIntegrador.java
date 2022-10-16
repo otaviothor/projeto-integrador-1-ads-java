@@ -7,9 +7,6 @@ import projetointegrador.controllers.TreinoController;
 import projetointegrador.controllers.UsuarioController;
 import projetointegrador.services.MenuService;
 
-/**
- * classe principal do sistema onde ele vai ser inicializado o o programa
- */
 public class ProjetoIntegrador {
 	public static void main(String[] args) {
 		MenuService menuService = new MenuService();
@@ -28,7 +25,7 @@ public class ProjetoIntegrador {
 				if (modelo == 1)
 					exercicioController.controlador(operacao);
 				else if (modelo == 2)
-					treinoController.controlador(operacao);
+					treinoController.controlador(operacao, exercicioController);
 				else if (modelo == 3)
 					usuarioController.controlador(operacao);
 			}

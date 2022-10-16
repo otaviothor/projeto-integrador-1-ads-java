@@ -39,7 +39,7 @@ public class ExercicioService {
 
     // captura o nome do exercicio
     do {
-      exercicio.nome = JOptionPane.showInputDialog(null, "Informe o nome do exercício:", "Cadastro de exercício",
+      exercicio.nome = JOptionPane.showInputDialog(null, "Informe o nome do exercício:", "Cadastrar exercício",
           JOptionPane.QUESTION_MESSAGE);
 
       if (exercicio.nome.length() < 5)
@@ -50,7 +50,7 @@ public class ExercicioService {
     // captura a descricao do exercicio
     do {
       exercicio.descricao = JOptionPane.showInputDialog(null, "Informe a descrição do exercício:",
-          "Cadastro de exercício",
+          "Cadastrar exercício",
           JOptionPane.QUESTION_MESSAGE);
 
       if (exercicio.descricao.length() < 5)
@@ -64,7 +64,7 @@ public class ExercicioService {
           "Lombar", "Quadríceps", "Panturrilha" };
       exercicio.musculo = (String) JOptionPane.showInputDialog(null,
           "Selecione o músculo que esse exercício ativa:",
-          "Cadastro de exercício", JOptionPane.QUESTION_MESSAGE, null, musculos, musculos[0]);
+          "Cadastrar exercício", JOptionPane.QUESTION_MESSAGE, null, musculos, musculos[0]);
 
       if (exercicio.musculo.length() < 5)
         JOptionPane.showMessageDialog(null, "O músculo ativado deve ter no minímo 5 caracteres.", "Erro",
@@ -82,7 +82,7 @@ public class ExercicioService {
    * e retorna
    * 
    * @param Exercicio exercicioCadastrado
-   * @return Exercicio novoExercicios
+   * @return Exercicio exercicioEditado
    */
   public Exercicio editarExercicio(Exercicio exercicioCadastrado) {
     Exercicio exercicioEditado = new Exercicio();
