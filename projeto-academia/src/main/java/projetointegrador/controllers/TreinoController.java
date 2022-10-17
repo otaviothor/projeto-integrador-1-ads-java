@@ -7,7 +7,6 @@ import javax.swing.JOptionPane;
 import projetointegrador.dto.ExerciciosQuantidadeDto;
 import projetointegrador.dto.TreinoExerciciosDto;
 import projetointegrador.dto.TreinoIndexDto;
-import projetointegrador.models.Exercicio;
 import projetointegrador.models.Treino;
 import projetointegrador.services.TreinoService;
 
@@ -36,6 +35,7 @@ public class TreinoController {
       } else {
         TreinoIndexDto selecionado = mostraESelecionaTreinoDoArray("Selecione o treino que consultar editar.",
             "Consultar treino");
+        // TODO pegar os exercicios dos arrays de ids e filtrar
         ExerciciosQuantidadeDto exerciciosQtd = exercicioController.retornaExerciciosEQuantidadeCadstrado();
 
         TreinoExerciciosDto.treino = selecionado.treino;
@@ -64,6 +64,15 @@ public class TreinoController {
         String id = UUID.randomUUID().toString();
         treino.id = id;
         treinos[qtdTreinosCadastrados] = treino;
+
+        // TODO remover logs
+        System.out.println(treino.descricao);
+        System.out.println(treino.id);
+        System.out.println(treino.nome);
+
+        for (String ide : treino.idExercicios) {
+          System.out.println(ide);
+        }
 
         JOptionPane.showMessageDialog(null,
             "Exercício cadastrado com sucesso.",

@@ -23,7 +23,7 @@ public class TreinoService {
     int index = 1;
 
     for (Exercicio exercicio : TreinoExerciciosDto.exercicios) {
-      exerciciosMensagem += index + "º exercício\n" +
+      exerciciosMensagem += "" + index + "º exercício\n" +
           "ID: " + exercicio.id + "\n" +
           "Nome: " + exercicio.nome + "\n" +
           "Descrição: " + exercicio.descricao + "\n" +
@@ -49,7 +49,7 @@ public class TreinoService {
     Treino treino = new Treino();
     ExercicioIndexDto exercicioSelecionado;
     int index = 0;
-    String[] idExerciciosSelecionados = new String[3];
+    String[] idExerciciosSelecionados = new String[2];
 
     // captura o nome do treino
     do {
@@ -73,22 +73,23 @@ public class TreinoService {
     } while (treino.descricao.length() < 5);
 
     // captura os exercicios do treino
-    while (index <= 2) {
+    while (index < 2) {
       exercicioSelecionado = exercicioController.mostraESelecionaExercicioDoArray(
-          "Selecione o " + (index + 1) + "º exercício do treino:\n\nObs.: Você pode selecionar até 3 exercícios.",
+          "Selecione o " + (index + 1) + "º exercício do treino:\n\nObs.: Você pode selecionar até 2 exercícios.",
           "Cadastrar treino");
       idExerciciosSelecionados[index] = exercicioSelecionado.exercicio.id;
 
-      if (index <= 2) {
-        int resultado = JOptionPane.showConfirmDialog(null,
-            "Deseja cadastrar mais exercícios?", "Cadastrar treino",
-            JOptionPane.YES_NO_OPTION);
-
-        if (resultado == JOptionPane.NO_OPTION)
-          break;
-      }
-
       index++;
+
+      if (index <= 2)
+        break;
+
+      int resultado = JOptionPane.showConfirmDialog(null,
+          "Deseja cadastrar mais exercícios?", "Cadastrar treino",
+          JOptionPane.YES_NO_OPTION);
+
+      if (resultado == JOptionPane.NO_OPTION)
+        break;
     }
     treino.idExercicios = idExerciciosSelecionados;
 

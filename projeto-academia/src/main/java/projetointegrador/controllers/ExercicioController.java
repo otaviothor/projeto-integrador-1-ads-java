@@ -22,11 +22,7 @@ public class ExercicioController {
    * @param int operacao
    */
   public void controlador(int operacao) {
-    for (Exercicio exercicio : exercicios) {
-      if (exercicio != null) {
-        qtdExerciciosCadastrados++;
-      }
-    }
+    atualizaQtdExerciciosCadastrados();
 
     /**
      * controlador para consultar um exercicio
@@ -174,9 +170,19 @@ public class ExercicioController {
   public ExerciciosQuantidadeDto retornaExerciciosEQuantidadeCadstrado() {
     ExerciciosQuantidadeDto exerciciosQtd = new ExerciciosQuantidadeDto();
 
+    atualizaQtdExerciciosCadastrados();
+
     exerciciosQtd.exercicios = exercicios;
     exerciciosQtd.quantidade = qtdExerciciosCadastrados;
 
     return exerciciosQtd;
+  }
+
+  public void atualizaQtdExerciciosCadastrados() {
+    for (Exercicio exercicio : exercicios) {
+      if (exercicio != null) {
+        qtdExerciciosCadastrados++;
+      }
+    }
   }
 }
