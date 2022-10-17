@@ -8,33 +8,35 @@ import projetointegrador.controllers.UsuarioController;
 import projetointegrador.services.MenuService;
 
 public class ProjetoIntegrador {
-	public static void main(String[] args) {
-		MenuService menuService = new MenuService();
-		ExercicioController exercicioController = new ExercicioController();
-		TreinoController treinoController = new TreinoController();
-		UsuarioController usuarioController = new UsuarioController();
 
-		int operacao;
+    public static void main(String[] args) {
+        MenuService menuService = new MenuService();
+        ExercicioController exercicioController = new ExercicioController();
+        TreinoController treinoController = new TreinoController();
+        UsuarioController usuarioController = new UsuarioController();
 
-		do {
-			operacao = menuService.menuInicial();
+        int operacao;
 
-			if (operacao != 0) {
-				int modelo = menuService.menuModelo(operacao);
+        do {
+            operacao = menuService.menuInicial();
 
-				if (modelo == 1)
-					exercicioController.controlador(operacao);
-				else if (modelo == 2)
-					treinoController.controlador(operacao, exercicioController);
-				else if (modelo == 3)
-					usuarioController.controlador(operacao);
-			}
+            if (operacao != 0) {
+                int modelo = menuService.menuModelo(operacao);
 
-		} while (operacao != 0);
+                if (modelo == 1) {
+                    exercicioController.controlador(operacao);
+                } else if (modelo == 2) {
+                    treinoController.controlador(operacao, exercicioController);
+                } else if (modelo == 3) {
+                    usuarioController.controlador(operacao);
+                }
+            }
 
-		JOptionPane.showMessageDialog(null,
-				"Obrigado por usar nosso sistema.",
-				"Sistema de gerenciamento de academia",
-				JOptionPane.INFORMATION_MESSAGE);
-	}
+        } while (operacao != 0);
+
+        JOptionPane.showMessageDialog(null,
+                "Obrigado por usar nosso sistema.",
+                "Sistema de gerenciamento de academia",
+                JOptionPane.INFORMATION_MESSAGE);
+    }
 }

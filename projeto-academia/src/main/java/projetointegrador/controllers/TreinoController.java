@@ -8,6 +8,7 @@ import projetointegrador.dto.ExerciciosQuantidadeDto;
 import projetointegrador.dto.TreinoExerciciosDto;
 import projetointegrador.dto.TreinoIndexDto;
 import projetointegrador.models.Treino;
+import projetointegrador.models.Exercicio;
 import projetointegrador.services.TreinoService;
 
 public class TreinoController {
@@ -38,8 +39,19 @@ public class TreinoController {
         // TODO pegar os exercicios dos arrays de ids e filtrar
         ExerciciosQuantidadeDto exerciciosQtd = exercicioController.retornaExerciciosEQuantidadeCadstrado();
 
+        Exercicio[] exerciciosDoTreino = new Exercicio[selecionado.treino.idExercicios.length];
+        int indexExercicio = 0;
+        for (String id : selecionado.treino.idExercicios) {
+          for (Exercicio exercicio : exerciciosQtd.exercicios) {
+            if (exercicio != null && exercicio.id == id) {
+              exerciciosDoTreino[indexExercicio] = exercicio;
+              indexExercicio++;
+            }
+          }
+        }
+
         TreinoExerciciosDto.treino = selecionado.treino;
-        TreinoExerciciosDto.exercicios = exerciciosQtd.exercicios;
+        TreinoExerciciosDto.exercicios = exerciciosDoTreino;
 
         treinoService.mostrarTreino(TreinoExerciciosDto);
       }
@@ -64,15 +76,6 @@ public class TreinoController {
         String id = UUID.randomUUID().toString();
         treino.id = id;
         treinos[qtdTreinosCadastrados] = treino;
-
-        // TODO remover logs
-        System.out.println(treino.descricao);
-        System.out.println(treino.id);
-        System.out.println(treino.nome);
-
-        for (String ide : treino.idExercicios) {
-          System.out.println(ide);
-        }
 
         JOptionPane.showMessageDialog(null,
             "Exercício cadastrado com sucesso.",
