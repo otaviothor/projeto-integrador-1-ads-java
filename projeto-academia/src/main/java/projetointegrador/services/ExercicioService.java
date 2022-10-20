@@ -1,17 +1,13 @@
 package projetointegrador.services;
 
-import java.util.Scanner;
-
 import javax.swing.JOptionPane;
 
 import projetointegrador.models.Exercicio;
 
 public class ExercicioService {
-  Scanner scanner = new Scanner(System.in);
 
   /**
-   * metodo que recebe um parametro do tipo `Exercicio`
-   * que serve para mostrar detalhes de um exercicio
+   * metodo que vai mostrar todas as informacoes do exercicio
    * 
    * @param Exercicio exercicio
    * @return void
@@ -27,10 +23,8 @@ public class ExercicioService {
   }
 
   /**
-   * metodo que captura as informacoes de um exercicios,
-   * valida se todos tem no minimo 5 caracteres e retorna
-   * para que seja salvo no array onde estão todos os
-   * exercicios salvos
+   * metodo que vai cadastra um exercicio preenchendo todas as suas propriedades
+   * e validando se elas estao dentro do padrao
    * 
    * @return Exercicio exercicio
    */
@@ -75,11 +69,9 @@ public class ExercicioService {
   }
 
   /**
-   * metodo que recebe um parametro do tipo `Exercicio`,
-   * valida se um novo valor foi informado para atualizar e
-   * se ele possui no minimo 5 caracteres, se nao mantem o
-   * valor existente previamente vindo atraves do parametro
-   * e retorna
+   * metodo que vai editar um exercicio que foi escolhido previamente
+   * validando se elas estao dentro do padrao assim como no cadastro
+   * e vai retornar para que ele seja realocado na mesma posicao
    * 
    * @param Exercicio exercicioCadastrado
    * @return Exercicio exercicioEditado
@@ -137,11 +129,8 @@ public class ExercicioService {
   }
 
   /**
-   * metodo que recebe um parametro do tipo `Exercicio[]`,
-   * contendo todos os exercicios cadastrados e tambem um
-   * parametro `int` que serve como index da posicao do array
-   * que deve ser excluida, e apos a exclusao, um novo array e
-   * retornado sem a posicao informada para que seja salvo
+   * metodo que vai excluir um exercicio do array e vai reordena-los
+   * para nao deixar nenhuma posicao do array vazia
    * 
    * @param Exercicio[] exercicios
    * @param int         index

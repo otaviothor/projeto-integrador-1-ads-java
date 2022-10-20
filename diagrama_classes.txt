@@ -1,0 +1,162 @@
+# classes modelo
+
+## Usuario
+
++ id: int
++ nome: String
++ dataNascimento: String
++ altura: float
++ peso: float
++ cpf: String
++ email: String
++ telefone: String
++ idTreino: int
+
++ Usuario(): void
++ Usuario(
+  int id,
+  String nome,
+  String dataNascimento,
+  float altura,
+  float peso,
+  String cpf,
+  String email,
+  String telefone,
+  int idTreino): void
+
+## Treino
+
++ id: String
++ nome: String
++ descricao: String
++ idExercicios: String[]
+
++ Treino(): void
++ Treino(
+  String id,
+  String nome,
+  String descricao,
+  String[] idExercicios): void
+
+## Exercicio
+
++ id: String
++ nome: String
++ descricao: String
++ musculo: String
+
++ Exercicio(): void
++ Exercicio(
+  String id,
+  String nome,
+  String descricao,
+  String musculo): void
+
+---
+
+# classes controller
+
+## Usuario + em desenvolvimento
+
+## Treino
+
++ treinos: Treino[]
++ treinoService: TreinoService
++ TreinoExerciciosDto: TreinoExerciciosDto
++ qtdTreinosCadastrados: int
+
++ controlador(int operacao, ExercicioController exercicioController): void
++ mostraESelecionaTreinoDoArray(String message, String title): TreinoIndexDto
++ retornaTreinosEQuantidadeCadstrado(): TreinosQuantidadeDto
++ atualizaQtdTreinosCadastrados(): void
+
+## Exercicio
+
++ exercicios: Exercicio[]
++ exercicioService: ExercicioService
++ qtdExerciciosCadastrados: int
+
++ controlador(int operacao): void
++ mostraESelecionaExercicioDoArray(String message, String title): ExercicioIndexDto
++ retornaExerciciosEQuantidadeCadstrado(): ExerciciosQuantidadeDto
++ atualizaQtdExerciciosCadastrados(): void
+
+---
+
+# classes servico
+
+## MenuService
+
+- opcoes: String[]
+- opcoesList: List<String>
+- modelos: String[]
+- modelosList: List<String>
+
++ menuInicial(): int
++ menuModelo(int opcao): int
+
+## TreinoService
+
+Obs.: TreinoService nao possui atributos, apenas metodos
+
++ mostrarTreino(TreinoExerciciosDto TreinoExerciciosDto): void
++ cadastrarTreino(ExercicioController exercicioController): Treino
++ editarTreino(Treino treinoCadastrado, ExercicioController exercicioController): Treino
++ excluirTreino(Treino[] treinos, int index): Treino[]
+
+## ExercicioService
+
+Obs.: ExercicioService nao possui atributos, apenas metodos
+
++ mostrarExercicio(Exercicio exercicio): void
++ cadastrarExercicio(): Exercicio
++ editarExercicio(Exercicio exercicioCadastrado): Exercicio
++ excluirExercicio(Exercicio[] exercicios, int index): Exercicio[]
+
+---
+
+# classes dto (data transfer object, objeto de transferencia de dados)
+
+## ExercicioIndexDto
+
++ exercicio: Exercicio
++ index: int
+
++ ExercicioIndexDto(): void
++ ExercicioIndexDto(Exercicio exercicio, int index): void
+
+## ExerciciosQuantidadeDto
+
++ exercicios: Exercicio[]
++ quantidade: int
+
++ ExerciciosQuantidadeDto(): void
++ ExerciciosQuantidadeDto(Exercicio[] exercicios, int quantidade): void
+
+## TreinoExerciciosDto
+
++ treino: Treino
++ exercicios: Exercicio[]
+
++ TreinoExerciciosDto(): void
++ TreinoExerciciosDto(
+  Treino treino,
+  Exercicio[] exercicios): void
+
+## TreinoIndexDto
+
++ treino: Treino
++ index: int
+
++ TreinoIndexDto(): void
++ TreinoIndexDto(
+  Treino treino,
+  int index): void
+
+## TreinosQuantidadeDto
+
++ treinos: Treinos[]
++ quantidade: int
+
++ TreinosQuantidadeDto(): void
++ TreinosQuantidadeDto(Treinos[] treinos, int quantidade): void

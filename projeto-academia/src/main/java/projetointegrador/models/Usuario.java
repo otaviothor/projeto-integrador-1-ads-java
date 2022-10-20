@@ -1,5 +1,8 @@
 package projetointegrador.models;
 
+/**
+ * classe modelo do usuario
+ */
 public class Usuario {
   public int id;
   public String nome;

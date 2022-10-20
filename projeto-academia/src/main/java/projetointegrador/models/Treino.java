@@ -1,5 +1,8 @@
 package projetointegrador.models;
 
+/**
+ * classe modelo do treino
+ */
 public class Treino {
   public String id;
   public String nome;

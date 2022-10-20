@@ -3,6 +3,10 @@ package projetointegrador.dto;
 import projetointegrador.models.Exercicio;
 import projetointegrador.models.Treino;
 
+/**
+ * classe auxiliar para transferencia de informacoes
+ * de treino e seus exercicios
+ */
 public class TreinoExerciciosDto {
   public Treino treino;
   public Exercicio[] exercicios;

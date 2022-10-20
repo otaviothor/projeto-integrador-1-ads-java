@@ -7,22 +7,27 @@ import javax.swing.JOptionPane;
 import projetointegrador.dto.ExerciciosQuantidadeDto;
 import projetointegrador.dto.TreinoExerciciosDto;
 import projetointegrador.dto.TreinoIndexDto;
+import projetointegrador.dto.TreinosQuantidadeDto;
 import projetointegrador.models.Treino;
 import projetointegrador.models.Exercicio;
 import projetointegrador.services.TreinoService;
 
 public class TreinoController {
-  Treino treinos[] = new Treino[30];
-  TreinoService treinoService = new TreinoService();
-  TreinoExerciciosDto TreinoExerciciosDto = new TreinoExerciciosDto();
+  public Treino treinos[] = new Treino[30];
+  public TreinoService treinoService = new TreinoService();
+  public TreinoExerciciosDto TreinoExerciciosDto = new TreinoExerciciosDto();
+  public int qtdTreinosCadastrados = 0;
 
+  /**
+   * metodo que vai receber um parametro referente a qual operacao ele
+   * vai realizar (create, read, update, delete) e direcionar a seu
+   * respectivo bloco através do if-else
+   * 
+   * @param int                 operacao
+   * @param ExercicioController exercicioController
+   */
   public void controlador(int operacao, ExercicioController exercicioController) {
-    int qtdTreinosCadastrados = 0;
-    for (Treino treino : treinos) {
-      if (treino != null) {
-        qtdTreinosCadastrados++;
-      }
-    }
+    atualizaQtdTreinosCadastrados();
 
     /**
      * controlador para consultar um treino
@@ -36,7 +41,6 @@ public class TreinoController {
       } else {
         TreinoIndexDto selecionado = mostraESelecionaTreinoDoArray("Selecione o treino que consultar editar.",
             "Consultar treino");
-        // TODO pegar os exercicios dos arrays de ids e filtrar
         ExerciciosQuantidadeDto exerciciosQtd = exercicioController.retornaExerciciosEQuantidadeCadstrado();
 
         Exercicio[] exerciciosDoTreino = new Exercicio[selecionado.treino.idExercicios.length];
@@ -188,4 +192,33 @@ public class TreinoController {
     return treinoIndexDto;
   }
 
+  /**
+   * metodo que retorna quantos treinos foram cadastrados e tambem
+   * os treinos em si
+   * 
+   * @return TreinosQuantidadeDto treinosQtd
+   */
+  public TreinosQuantidadeDto retornaTreinosEQuantidadeCadstrado() {
+    TreinosQuantidadeDto treinosQtd = new TreinosQuantidadeDto();
+
+    atualizaQtdTreinosCadastrados();
+
+    treinosQtd.treinos = treinos;
+    treinosQtd.quantidade = qtdTreinosCadastrados;
+
+    return treinosQtd;
+  }
+
+  /**
+   * metodo que atualiza a variavel de quantos treinos foram cadastrados
+   * 
+   * @return void
+   */
+  public void atualizaQtdTreinosCadastrados() {
+    for (Treino treino : treinos) {
+      if (treino != null) {
+        qtdTreinosCadastrados++;
+      }
+    }
+  }
 }

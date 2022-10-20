@@ -3,7 +3,6 @@ package projetointegrador.services;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
@@ -13,8 +12,12 @@ public class MenuService {
   private final String[] modelos = new String[] { "1", "2", "3", "0" };
   private final List<String> modelosList = new ArrayList<>(Arrays.asList(modelos));
 
-  Scanner scanner = new Scanner(System.in);
-
+  /**
+   * metodo que vai mostrar um JOptionPane com as opcoes das operacoes
+   * que ele pode realizar (create, read, update, delete)
+   * 
+   * @return int opcao
+   */
   public int menuInicial() {
     String opcao;
 
@@ -37,6 +40,12 @@ public class MenuService {
     return Integer.parseInt(opcao);
   }
 
+  /**
+   * metodo que vai mostrar um JOptionPane com as opcoes dos modelos
+   * que ele vai operar em cima delas
+   * 
+   * @return int modelo
+   */
   public int menuModelo(int opcao) {
     String modelo, modeloOpcao;
 

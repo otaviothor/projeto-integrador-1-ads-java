@@ -10,14 +10,14 @@ import projetointegrador.models.Exercicio;
 import projetointegrador.services.ExercicioService;
 
 public class ExercicioController {
-  Exercicio exercicios[] = new Exercicio[30];
-  ExercicioService exercicioService = new ExercicioService();
-  int qtdExerciciosCadastrados = 0;
+  public Exercicio exercicios[] = new Exercicio[30];
+  public ExercicioService exercicioService = new ExercicioService();
+  public int qtdExerciciosCadastrados = 0;
 
   /**
-   * metodo de controlador, ela vai receber como parametro
-   * a operacao que vai ser realizada e direcionar atraves
-   * do if-else, ao seu respectivo bloco de intrucoes
+   * metodo que vai receber um parametro referente a qual operacao ele
+   * vai realizar (create, read, update, delete) e direcionar a seu
+   * respectivo bloco através do if-else
    * 
    * @param int operacao
    */
@@ -167,6 +167,12 @@ public class ExercicioController {
     return exercicioIndexDto;
   }
 
+  /**
+   * metodo que retorna quantos exercicios foram cadastrados e tambem
+   * os exercicios em si
+   * 
+   * @return ExerciciosQuantidadeDto exerciciosQtd
+   */
   public ExerciciosQuantidadeDto retornaExerciciosEQuantidadeCadstrado() {
     ExerciciosQuantidadeDto exerciciosQtd = new ExerciciosQuantidadeDto();
 
@@ -178,6 +184,11 @@ public class ExercicioController {
     return exerciciosQtd;
   }
 
+  /**
+   * metodo que atualiza a variavel de quantos treinos foram cadastrados
+   * 
+   * @return void
+   */
   public void atualizaQtdExerciciosCadastrados() {
     for (Exercicio exercicio : exercicios) {
       if (exercicio != null) {
