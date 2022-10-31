@@ -119,6 +119,8 @@ public class ExercicioController {
               JOptionPane.INFORMATION_MESSAGE);
         }
       }
+
+      atualizaQtdExerciciosCadastrados();
     }
 
     /**
@@ -173,7 +175,7 @@ public class ExercicioController {
    * 
    * @return ExerciciosQuantidadeDto exerciciosQtd
    */
-  public ExerciciosQuantidadeDto retornaExerciciosEQuantidadeCadstrado() {
+  public ExerciciosQuantidadeDto retornaExerciciosEQuantidadeCadastrado() {
     ExerciciosQuantidadeDto exerciciosQtd = new ExerciciosQuantidadeDto();
 
     atualizaQtdExerciciosCadastrados();

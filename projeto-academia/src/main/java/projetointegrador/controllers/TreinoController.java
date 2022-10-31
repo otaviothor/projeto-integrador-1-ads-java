@@ -39,9 +39,9 @@ public class TreinoController {
             "Sem dado",
             JOptionPane.WARNING_MESSAGE);
       } else {
-        TreinoIndexDto selecionado = mostraESelecionaTreinoDoArray("Selecione o treino que consultar editar.",
+        TreinoIndexDto selecionado = mostraESelecionaTreinoDoArray("Selecione o treino que deseja consultar.",
             "Consultar treino");
-        ExerciciosQuantidadeDto exerciciosQtd = exercicioController.retornaExerciciosEQuantidadeCadstrado();
+        ExerciciosQuantidadeDto exerciciosQtd = exercicioController.retornaExerciciosEQuantidadeCadastrado();
 
         Exercicio[] exerciciosDoTreino = new Exercicio[selecionado.treino.idExercicios.length];
         int indexExercicio = 0;
@@ -65,7 +65,7 @@ public class TreinoController {
      * controlador para cadastrar um treino
      */
     else if (operacao == 2) {
-      if (exercicioController.retornaExerciciosEQuantidadeCadstrado().quantidade == 0) {
+      if (exercicioController.retornaExerciciosEQuantidadeCadastrado().quantidade == 0) {
         JOptionPane.showMessageDialog(null,
             "Você ainda não cadastrou nenhum exercício. Faça-o primeiro e retorne para cadastrar seu treino.",
             "Sem exercícios",
@@ -132,7 +132,7 @@ public class TreinoController {
             "Excluir treino");
 
         int resultado = JOptionPane.showConfirmDialog(null,
-            "Podem ter treinos cadastrados com esse treino, deseja excluir mesmo assim?", "Excluir treino",
+            "Podem ter usuários cadastrados com esse treino, deseja excluir mesmo assim?", "Excluir treino",
             JOptionPane.YES_NO_OPTION);
 
         if (resultado == JOptionPane.YES_OPTION) {
@@ -143,6 +143,8 @@ public class TreinoController {
               "Excluir treino",
               JOptionPane.INFORMATION_MESSAGE);
         }
+
+        atualizaQtdTreinosCadastrados();
       }
     }
 
@@ -198,7 +200,7 @@ public class TreinoController {
    * 
    * @return TreinosQuantidadeDto treinosQtd
    */
-  public TreinosQuantidadeDto retornaTreinosEQuantidadeCadstrado() {
+  public TreinosQuantidadeDto retornaTreinosEQuantidadeCadastrado() {
     TreinosQuantidadeDto treinosQtd = new TreinosQuantidadeDto();
 
     atualizaQtdTreinosCadastrados();

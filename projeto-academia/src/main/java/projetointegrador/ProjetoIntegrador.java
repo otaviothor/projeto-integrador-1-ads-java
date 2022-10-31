@@ -28,7 +28,7 @@ public class ProjetoIntegrador {
 				} else if (modelo == 2) {
 					treinoController.controlador(operacao, exercicioController);
 				} else if (modelo == 3) {
-					usuarioController.controlador(operacao);
+					usuarioController.controlador(operacao, treinoController, exercicioController);
 				}
 			}
 

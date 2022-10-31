@@ -56,9 +56,18 @@
 
 # classes controller
 
-## Usuario + em desenvolvimento
+## UsuarioController (NOVO)
 
-## Treino
++ usuarios: Usuario[]
++ usuarioService : UsuarioService
++ usuarioTreinoExerciciosDto : UsuarioTreinoExerciciosDto
++ qtdUsuariosCadastrados : int
+
++ controlador(int operacao, TreinoController treinoController, ExercicioController exercicioController): void
++ mostraESelecionaUsuarioDoArray(String message, String title): UsuarioIndexDto
++ atualizaQtdUsuariosCadastrados(): void
+
+## TreinoController
 
 + treinos: Treino[]
 + treinoService: TreinoService
@@ -70,7 +79,7 @@
 + retornaTreinosEQuantidadeCadstrado(): TreinosQuantidadeDto
 + atualizaQtdTreinosCadastrados(): void
 
-## Exercicio
+## ExercicioController
 
 + exercicios: Exercicio[]
 + exercicioService: ExercicioService
@@ -112,6 +121,15 @@ Obs.: ExercicioService nao possui atributos, apenas metodos
 + cadastrarExercicio(): Exercicio
 + editarExercicio(Exercicio exercicioCadastrado): Exercicio
 + excluirExercicio(Exercicio[] exercicios, int index): Exercicio[]
+
+## UsuarioService (NOVO)
+
+Obs.: UsuarioService nao possui atributos, apenas metodos
+
++ mostrarUsuario(UsuarioTreinoExerciciosDto usuarioTreinoExerciciosDto): void
++ cadastrarUsuario(TreinoController treinoController): Usuario
++ editarUsuario(Usuario usuarioCadastrado, TreinoController treinoController): Usuario
++ excluirUsuario(Usuario[] usuarios, int index): Usuario[]
 
 ---
 
@@ -160,3 +178,25 @@ Obs.: ExercicioService nao possui atributos, apenas metodos
 
 + TreinosQuantidadeDto(): void
 + TreinosQuantidadeDto(Treinos[] treinos, int quantidade): void
+
+## UsuarioIndexDto (NOVO)
+
++ usuario: Usuario
++ index: int
+
++ UsuarioIndexDto(): void
++ UsuarioIndexDto(
+  Usuario usuario,
+  int index): void
+
+## UsuarioTreinoExerciciosDto (NOVO)
+
++ usuario: Usuario 
++ treino: Treino 
++ exercicios: Exercicio[] 
+
++ UsuarioTreinoExerciciosDto(): void
++ UsuarioTreinoExerciciosDto(
+  Usuario usuario,
+  Treino treino,
+  Exercicio[] exercicios): void
