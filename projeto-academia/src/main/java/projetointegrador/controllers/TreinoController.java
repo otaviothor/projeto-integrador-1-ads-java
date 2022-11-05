@@ -97,6 +97,11 @@ public class TreinoController {
             "Nenhum treino foi cadastrado ainda.",
             "Sem dado",
             JOptionPane.WARNING_MESSAGE);
+      } else if (exercicioController.retornaExerciciosEQuantidadeCadastrado().quantidade == 0) {
+        JOptionPane.showMessageDialog(null,
+            "Não encontramos nenhum exercício cadastrado. Faça-o primeiro e retorne para editar seu treino.",
+            "Sem exercícios",
+            JOptionPane.WARNING_MESSAGE);
       } else {
         TreinoIndexDto selecionado = mostraESelecionaTreinoDoArray("Selecione o treino que deseja editar.",
             "Editar treino");
@@ -217,6 +222,7 @@ public class TreinoController {
    * @return void
    */
   public void atualizaQtdTreinosCadastrados() {
+    qtdTreinosCadastrados = 0;
     for (Treino treino : treinos) {
       if (treino != null) {
         qtdTreinosCadastrados++;

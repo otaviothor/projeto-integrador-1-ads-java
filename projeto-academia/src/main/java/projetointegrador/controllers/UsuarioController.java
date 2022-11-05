@@ -112,6 +112,11 @@ public class UsuarioController {
             "Nenhum usuário foi cadastrado ainda.",
             "Sem dado",
             JOptionPane.WARNING_MESSAGE);
+      } else if (treinoController.retornaTreinosEQuantidadeCadastrado().quantidade == 0) {
+        JOptionPane.showMessageDialog(null,
+            "Não encontramos nenhum treino cadastrado. Faça-o primeiro e retorne para editar o usuário.",
+            "Sem treinos",
+            JOptionPane.WARNING_MESSAGE);
       } else {
         UsuarioIndexDto selecionado = mostraESelecionaUsuarioDoArray("Selecione o usuário que deseja editar.",
             "Editar usuário");
@@ -218,6 +223,8 @@ public class UsuarioController {
    * @return void
    */
   public void atualizaQtdUsuariosCadastrados() {
+    qtdUsuariosCadastrados = 0;
+
     for (Usuario usuario : usuarios) {
       if (usuario != null) {
         qtdUsuariosCadastrados++;

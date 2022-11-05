@@ -192,6 +192,7 @@ public class ExercicioController {
    * @return void
    */
   public void atualizaQtdExerciciosCadastrados() {
+    qtdExerciciosCadastrados = 0;
     for (Exercicio exercicio : exercicios) {
       if (exercicio != null) {
         qtdExerciciosCadastrados++;
